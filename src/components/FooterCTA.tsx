@@ -28,7 +28,7 @@ const FooterCTA = () => {
             Get Started
           </span>
 
-          <h3 className="text-3xl md:text-[40px] lg:text-[44px] leading-tight font-bold text-[#120A0B] max-w-[500px]">
+          <h3 className="text-xl md:text-[40px] lg:text-[44px] leading-tight font-bold text-[#120A0B] max-w-[500px]">
             Scaling is hard. <br className="hidden md:block" /> Support shouldn’t be.
           </h3>
 
@@ -45,24 +45,30 @@ const FooterCTA = () => {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 mt-8 w-full sm:w-auto">
-            <button className="bg-black text-white px-10 py-4 rounded-full font-bold w-full sm:w-auto hover:bg-neutral-900 transition-all shadow-lg">
-              Start Your 7 Day Free Trial
-            </button>
-            <a className="underline font-bold text-[#120A0B] hover:text-black transition-colors" href="#">
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-6 md:mt-8 w-full sm:w-auto px-4 sm:px-0">
+  <button className="bg-black text-white px-6 py-3 md:px-10 md:py-4 rounded-full font-400 w-full sm:w-auto hover:bg-neutral-900 transition-all shadow-lg text-sm md:text-base">
+    Start Your 7 Day Free Trial
+  </button>
+            <a className="underline font-bold  text- [8px]text-[#120A0B] hover:text-black transition-colors" href="#">
               Contact Us
             </a>
           </div>
         </div>
 
         {/* ================= RIGHT CONTENT ================= */}
-        <div className="relative flex items-center justify-center lg:justify-end min-h-[300px] lg:h-full">
-          {/* Main Card */}
-          <img
-            src={ProductCard}
-            alt="Product"
-            className="relative lg:absolute top-0 lg:right-0 w-[280px] md:w-[350px] lg:w-[320px] h-auto shadow-2xl rounded-2xl z-10"
-          />
+        {/* ================= RIGHT CONTENT ================= */}
+<div className="relative flex items-center justify-center lg:justify-end min-h-[200px] md:min-h-[250px] lg:h-full mt-[-20px] md:mt-0"> 
+  {/* Added mt-[-20px] to pull the image section up on mobile */}
+  
+  <img
+    src={ProductCard}
+    alt="Product"
+    className="relative lg:absolute top-[-30px] md:top-0 lg:right-0 w-[280px] md:w-[350px] lg:w-[320px] h-auto shadow-2xl rounded-2xl z-10"
+  />
+  {/* Changed top-0 to top-[-30px] on mobile to reduce the gap */}
+
+  {/* ... rest of your code */}
+
 
           {/* Floating Small Cards - Desktop Only */}
           <div className="hidden lg:block">
@@ -77,10 +83,17 @@ const FooterCTA = () => {
               className="absolute bottom-[-50px] right-[-10px] w-[180px] h-auto z-20 shadow-xl"
             />
             {/* Arrow & Label */}
-            <div className="absolute top-[-20px] left-[-40px] rotate-[-5deg]">
-               <h3 className="font-['Kalam'] font-bold text-2xl text-[#120A0B]">Scale Globally</h3>
-               <img src={Arrow} alt="Arrow" className="w-12 mt-1 ml-6" />
-            </div>
+           {/* DECORATIVE HANDWRITTEN LABEL: Hidden on mobile/tablet to save space */}
+<div className="hidden lg:block absolute top-[20px] left-[-20px] xl:left-[40px] rotate-[-8deg] z-20 pointer-events-none">
+  <h3 className="font-['Kalam',_cursive] font-bold text-2xl xl:text-3xl text-[#120A0B] leading-none">
+    Scale <br /> Globally
+  </h3>
+  <img 
+    src={Arrow} 
+    alt="Hand-drawn arrow" 
+    className="w-14 md:w-16 mt-2 ml-10 rotate-[15deg] opacity-90" 
+  />
+</div>
           </div>
         </div>
       </div>

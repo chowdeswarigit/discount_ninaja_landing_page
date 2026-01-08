@@ -3,17 +3,18 @@ import TaskHubLogo from "@/assets/images/taskhub.png";
 
 const Footer = () => {
   return (
-    // mt-[250px] for mobile creates the "gap" needed so the CTA doesn't cover the FAQ
-    <footer className="relative bg-[#120A0B] mt-[250px] md:mt-[300px] lg:mt-[250px] pb-10">
+    // mt-[250px] on mobile creates space so the absolute CTA doesn't cover the FAQ
+    <footer className="relative bg-[#120A0B] mt-[250px] md:mt-[350px] lg:mt-[250px] pb-10">
       
-      {/* THE OVERLAP: This stays absolute */}
-      <div className="absolute top-[-200px] md:top-[-220px] lg:top-[-250px] left-0 w-full z-30 px-4 md:px-0">
+      {/* THE OVERLAP: Absolute positioning centered horizontally */}
+      <div className="absolute top-[-220px] md:top-[-280px] lg:top-[-250px] left-0 w-full z-30 px-4 md:px-0">
         <FooterCTA />
       </div>
 
-      {/* FOOTER CONTENT: High pt-[500px] for mobile keeps logo/news visible */}
-      <div className="max-w-[1200px] mx-auto px-6 text-white pt-[480px] md:pt-[520px] lg:pt-[350px]">
+      {/* FOOTER CONTENT: High pt ensures content sits BELOW the overlapping yellow box */}
+      <div className="max-w-[1200px] mx-auto px-6 text-white pt-[550px] md:pt-[650px] lg:pt-[350px]">
         
+        {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-y-12 lg:gap-x-8 mb-20">
           
           {/* Brand Section */}
@@ -28,7 +29,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Links Sections */}
+          {/* Links */}
           <div className="lg:col-span-4 grid grid-cols-2 gap-8">
             <div className="flex flex-col items-center md:items-start">
               <h4 className="font-bold mb-6 text-white text-lg tracking-tight">Platform</h4>
@@ -38,7 +39,6 @@ const Footer = () => {
                 <li className="hover:text-white cursor-pointer transition-colors">Changelog</li>
               </ul>
             </div>
-
             <div className="flex flex-col items-center md:items-start">
               <h4 className="font-bold mb-6 text-white text-lg tracking-tight">Company</h4>
               <ul className="text-[#A7A7A7] text-sm space-y-4">
@@ -51,24 +51,28 @@ const Footer = () => {
 
           {/* Newsletter Section */}
           <div className="lg:col-span-4 flex flex-col gap-6 items-center md:items-start">
-            <h4 className="font-bold text-lg text-white tracking-tight">Join our newsletter</h4>
-            <div className="flex flex-col sm:flex-row w-full bg-white/[0.03] border border-white/10 rounded-[24px] p-1.5 gap-2 transition-all">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 bg-transparent text-white text-sm outline-none px-5 py-3 sm:py-0 min-w-0"
-              />
-              <button className="bg-[#8B7DFF] text-white h-[48px] px-8 rounded-full text-sm font-bold hover:bg-[#7a6ce6] transition-all">
-                Subscribe
-              </button>
-            </div>
-          </div>
+            <div className="lg:col-span-4 flex flex-col gap-6 items-center md:items-start">
+  <h4 className="font-bold text-lg text-white tracking-tight">Join our newsletter</h4>
+  <div className="flex flex-col sm:flex-row w-full bg-white/[0.03] border border-white/10 rounded-[24px] p-1.5 gap-2">
+    <input
+      type="email"
+      placeholder="Enter your email"
+      className="flex-1 bg-transparent text-white text-sm outline-none px-5 py-3 sm:py-0"
+    />
+    
+    {/* Use 'hidden sm:block' to hide on mobile and show on small screens and up */}
+    <button className="hidden sm:block bg-[#8B7DFF] text-white h-[48px] px-8 rounded-full text-sm font-bold hover:bg-[#7a6ce6] transition-all">
+      Subscribe
+    </button>
+  </div>
+</div>
+</div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-10 flex flex-col-reverse md:flex-row justify-between items-center gap-8 text-[#666666] text-xs">
           <p>© 2024 TaskHub, Inc. All rights reserved.</p>
-           <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4">
             <a href="#" className="text-muted-foreground hover:text-card transition-colors">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
