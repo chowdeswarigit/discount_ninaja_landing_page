@@ -68,7 +68,7 @@ export default function FAQSection() {
                   }
                   className="w-full flex items-center justify-between py-[24px] text-left"
                 >
-                  <span className="font-satoshi font-700 text-[18px] text-[#120A0B]">
+                  <span className="font-satoshi font-bold text-[18px] text-[#120A0B]">
                     {faq.question}
                   </span>
 
@@ -82,7 +82,7 @@ export default function FAQSection() {
                 {/* Answer */}
                 {isOpen && (
                   <div className="pb-[24px]">
-                    <p className="font-satoshi text-[16px] leading-[27px] text-[#454140]">
+                    <p className="font-satoshi text-[18px] leading-[27px] text-[#454140]">
                       {faq.answer}
                     </p>
                   </div>

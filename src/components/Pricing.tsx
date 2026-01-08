@@ -78,16 +78,20 @@ const Pricing = () => {
           <div className="w-full max-w-[500px] bg-[#FAF9F7] rounded-[32px] p-6 md:p-[40px] flex flex-col justify-between relative min-h-[363px]">
             
             {/* FIXED BADGE POSITIONING FOR MEDIUM DEVICES */}
-            <div className="absolute -top-10 md:-top-12 right-2 md:right-0 lg:-right-6 flex flex-col items-center z-20">
-                <img
-                    src={Arrow}
-                    alt="arrow"
-                    className="hidden lg:block w-[76px] mb-[-15px] mr-12 rotate-[5deg]"
-                />
-                <span className="inline-flex items-center justify-center bg-[#5952FF] text-white text-[12px] md:text-[14px] font-bold px-5 py-2.5 rounded-full rotate-[-8deg] shadow-lg whitespace-nowrap border-2 border-white">
-                    Save 10%
-                </span>
-            </div>
+           {/* MOVE TO RIGHT: Adjusted 'right' and 'translate' values */}
+<div className="absolute -top-12 md:-top-16 right-[-10px] md:right-0 lg:-right-12 flex flex-col items-center z-20 pointer-events-none">
+    {/* Arrow: Positioned above the badge */}
+    <img
+        src={Arrow}
+        alt="arrow"
+        className="hidden lg:block w-[70px] mb-[-10px] ml-16 rotate-[15deg] opacity-90"
+    />
+    
+    {/* Save Badge: Rotated and border-styled */}
+    <span className="inline-flex items-center justify-center bg-[#5952FF] text-white text-[12px] md:text-[14px] font-bold px-5 py-2 rounded-full rotate-[10deg] shadow-xl whitespace-nowrap border-2 border-white">
+        Save 10%
+    </span>
+</div>
 
             <div className="w-full bg-white rounded-[24px] px-[16px] py-[24px] shadow-sm">
               <span className="inline-flex items-center justify-center bg-[#2FA3A2] text-white px-6 py-2 rounded-full text-[14px] font-medium mb-4">

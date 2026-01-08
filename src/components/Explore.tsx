@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Exploreimg from "@/assets/images/explorenow.png"
 
 const Explore = () => {
   return (
@@ -120,51 +121,11 @@ const Explore = () => {
           </div>
 
           {/* ================= RIGHT CONTAINER ================= */}
-          <div className="flex-1 flex flex-col gap-5 text-[#120A0B]">
+          <div className="flex-1 flex flex-col gap-5 text-[#120A0B] ">
             {/* Row 1 */}
-            <div className="flex items-center gap-4">
-              <span className="bg-white px-3 py-1.5 rounded-md text-sm font-bold shadow-sm">Give</span>
-              <span className="bg-[#2FA3A2] text-white px-4 py-1.5 rounded-full text-sm font-medium">20% Off</span>
-            </div>
+           <img src={Exploreimg} alt="explore now" className="w-full h-auto rounded-lg -mt-2 md:-mt-6 object-top "/>
 
-            {/* Row 2 */}
-            <div className="flex items-center gap-4">
-              <span className="bg-white px-3 py-1.5 rounded-md text-sm font-bold shadow-sm">On</span>
-              <span className="border border-neutral-300 bg-white px-4 py-1.5 rounded-md text-sm font-medium">Specific Products ▾</span>
-            </div>
-
-            {/* Product Pills */}
-            <div className="flex gap-2 flex-wrap">
-              {["Silk Saree", "Rose Gold Saree", "Yellow Georgette"].map((item) => (
-                <span key={item} className="bg-[#FFD86F] px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium">
-                  {item}
-                </span>
-              ))}
-            </div>
-
-            {/* Row 3 */}
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="bg-white px-3 py-1.5 rounded-md text-sm font-bold shadow-sm">On</span>
-              <span className="border border-neutral-300 bg-white px-4 py-1.5 rounded-md text-sm">Cart Subtotal ▾</span>
-              <span className="border border-neutral-300 bg-white px-2.5 py-1 rounded-full text-xs">&</span>
-              <span className="border border-neutral-300 bg-white px-4 py-1.5 rounded-md text-sm">Product in cart ▾</span>
-            </div>
-
-            {/* Values */}
-            <div className="flex items-center gap-4">
-              <span className="bg-[#2FA3A2] text-white px-4 py-1.5 rounded-full text-sm font-medium shadow-sm">₹120</span>
-              <span className="bg-[#FFD86F] px-4 py-1.5 rounded-full text-sm font-medium shadow-sm">Saree</span>
-            </div>
-
-            {/* Market */}
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="bg-white px-3 py-1.5 rounded-md text-sm font-bold shadow-sm">Market is</span>
-              {["India", "UAE", "Singapore"].map((m) => (
-                <span key={m} className="bg-[#FFD86F] px-3.5 py-1.5 rounded-full text-xs font-medium uppercase">
-                  {m}
-                </span>
-              ))}
-            </div>
+          
           </div>
         </div>
 

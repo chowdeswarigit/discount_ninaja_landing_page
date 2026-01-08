@@ -37,13 +37,16 @@ const FooterCTA = () => {
           </p>
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-4 mt-6">
-            {["Scale globally", "Expert setup", "7-day support"].map((item) => (
-              <div key={item} className="flex items-center gap-2">
-                <img src={Tick} alt="tick" className="w-[18px] h-[18px]" />
-                <span className="text-[#120A0B] text-sm font-semibold">{item}</span>
-              </div>
-            ))}
-          </div>
+  {["Scale globally", "Expert setup", "7-day support"].map((item) => (
+    <div key={item} className="flex items-center gap-2">
+      {/* Black circle with white tick mark */}
+      <div className="w-[18px] h-[18px] rounded-full bg-black flex items-center justify-center flex-shrink-0">
+        <span className="text-white text-[10px] leading-none font-bold">✓</span>
+      </div>
+      <span className="text-[#120A0B] text-sm font-semibold">{item}</span>
+    </div>
+  ))}
+</div>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 mt-6 md:mt-8 w-full sm:w-auto px-4 sm:px-0">
   <button className="bg-black text-white px-6 py-3 md:px-10 md:py-4 rounded-full font-400 w-full sm:w-auto hover:bg-neutral-900 transition-all shadow-lg text-sm md:text-base">
