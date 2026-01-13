@@ -11,7 +11,7 @@ import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import Explore from "@/components/Explore";
 import FAQSection from "@/components/Faq";
-
+console.log("Index page loaded");
 const Index = () => {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
