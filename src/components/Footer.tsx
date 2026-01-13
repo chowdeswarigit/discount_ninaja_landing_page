@@ -71,7 +71,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/5 pt-10 flex flex-col-reverse md:flex-row justify-between items-center gap-8 text-[#666666] text-xs">
-          <p>© 2024 TaskHub, Inc. All rights reserved.</p>
+<p>© {new Date().getFullYear()} Discount Ninja. Built for Shopify merchants.</p>
             <div className="flex items-center gap-4">
             <a href="#" className="text-muted-foreground hover:text-card transition-colors">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
