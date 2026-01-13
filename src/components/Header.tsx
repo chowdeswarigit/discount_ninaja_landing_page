@@ -32,9 +32,9 @@ const Header = () => {
 
             {/* RIGHT: Actions */}
             <div className="flex items-center gap-3 md:gap-6">
-              <button className="hidden sm:block text-sm font-bold underline text-[#120A0B] hover:opacity-70 transition-opacity">
+              {/* <button className="hidden sm:block text-sm font-bold underline text-[#120A0B] hover:opacity-70 transition-opacity">
                 View Demo
-              </button>
+              </button> */}
 
               <Button
                 className="bg-[#120A0B] hover:bg-[#1a1213] h-[40px] md:h-[44px] px-4 md:px-[24px] rounded-full text-white text-xs md:text-sm font-semibold transition-all active:scale-95"
