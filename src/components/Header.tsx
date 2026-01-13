@@ -22,7 +22,7 @@ const Header = () => {
 
               {/* Desktop Nav */}
               <nav className="hidden lg:flex items-center gap-8">
-                {["Features", "Plans", "Contacts"].map((item) => (
+                {["Features", "Plans",].map((item) => (
                   <a key={item} href={`#${item.toLowerCase()}`} className="text-sm font-medium text-[#120A0B] hover:text-[#5952FF] transition-colors">
                     {item}
                   </a>
@@ -32,9 +32,9 @@ const Header = () => {
 
             {/* RIGHT: Actions */}
             <div className="flex items-center gap-3 md:gap-6">
-              {/* <button className="hidden sm:block text-sm font-bold underline text-[#120A0B] hover:opacity-70 transition-opacity">
+              <button className="hidden sm:block text-sm font-bold underline text-[#120A0B] hover:opacity-70 transition-opacity">
                 View Demo
-              </button> */}
+              </button>
 
               <Button
                 className="bg-[#120A0B] hover:bg-[#1a1213] h-[40px] md:h-[44px] px-4 md:px-[24px] rounded-full text-white text-xs md:text-sm font-semibold transition-all active:scale-95"
@@ -58,7 +58,7 @@ const Header = () => {
               <nav className="flex flex-col gap-4">
                 <a onClick={() => setIsOpen(false)} href="#features" className="text-lg font-medium py-2 border-b border-gray-50">Features</a>
                 <a onClick={() => setIsOpen(false)} href="#plans" className="text-lg font-medium py-2 border-b border-gray-50">Plans</a>
-                <a onClick={() => setIsOpen(false)} href="#contacts" className="text-lg font-medium py-2 border-b border-gray-50">Contacts</a>
+                {/* <a onClick={() => setIsOpen(false)} href="#contacts" className="text-lg font-medium py-2 border-b border-gray-50">Contacts</a> */}
                 <button className="text-left text-lg font-bold underline text-[#120A0B] py-2">View Demo</button>
               </nav>
             </div>

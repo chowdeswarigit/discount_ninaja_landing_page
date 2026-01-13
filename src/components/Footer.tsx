@@ -1,5 +1,7 @@
 import FooterCTA from "./FooterCTA";
 import TaskHubLogo from "@/assets/images/taskhub.png";
+import { Link } from "react-router-dom";
+import Ninja from "@/assets/images/frame.svg";
 
 const Footer = () => {
   return (
@@ -20,7 +22,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
             <img 
-              src={TaskHubLogo} 
+              src={Ninja} 
               alt="TaskHub" 
               className="w-40 h-auto object-contain mb-6" 
             />
@@ -42,7 +44,9 @@ const Footer = () => {
             <div className="flex flex-col items-center md:items-start">
               <h4 className="font-bold mb-6 text-white text-lg tracking-tight">Company</h4>
               <ul className="text-[#A7A7A7] text-sm space-y-4">
-                <li className="hover:text-white cursor-pointer transition-colors">About Us</li>
+                <li className="hover:text-white transition-colors">
+                  <Link to="/about" className="cursor-pointer">About Us</Link>
+                </li>
                 <li className="hover:text-white cursor-pointer transition-colors">Contact Us</li>
                 <li className="hover:text-white cursor-pointer transition-colors">Blog</li>
               </ul>

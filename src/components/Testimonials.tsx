@@ -1,147 +1,188 @@
-import Star from "@/assets/images/star.svg";
-import Flourish from "@/assets/images/flourish.png";
-import Numerana from "@/assets/images/num.png";
-import IWasASari from "@/assets/images/i-was-a-sari.png";
+'use client';
+
+import React from 'react';
+import Star from '@/assets/images/star.svg';
+import Flourish from '@/assets/images/flourish.png';
+import Numerana from '@/assets/images/num.png';
+import IWasASari from '@/assets/images/i-was-a-sari.png';
+
+type Orientation = 'horizontal' | 'vertical';
+
+interface TestimonialsProps {
+  orientation?: Orientation;
+}
 
 const testimonials = [
   {
-    title: "Discounts Ninja is a total game changer.",
-    description: "MarketWise Discounts Ninja has been a game-changer for our multi-country fashion store.",
-    company: "I was a Sari",
-    country: "India",
+    title: 'Discount Ninja is a total game changer.',
+    description:
+      'MarketWise Discount Ninja has been a game-changer for our multi-country fashion store.',
+    company: 'I was a Sari',
+    country: 'India',
     logo: IWasASari,
   },
   {
     title: "It's a total game-changer for our company so far.",
-    description: "MarketWise Discounts Ninja has been a game-changer for our multi-country fashion store.",
-    company: "I was a Sari",
-    country: "India",
+    description:
+      'MarketWise Discount Ninja has been a game-changer for our multi-country fashion store.',
+    company: 'I was a Sari',
+    country: 'India',
     logo: IWasASari,
   },
   {
-    title: "Best of the Apps we have ever used!",
-    description: "This is one of the best apps we have ever used! No other discount app came close.",
-    company: "Numerana",
-    country: "Mexico",
+    title: 'Best of the apps we have ever used!',
+    description:
+      'This is one of the best apps we have ever used. No other discount app comes close.',
+    company: 'Numerana',
+    country: 'Mexico',
     logo: Numerana,
   },
   {
-    title: "MarketWise Discount Ninja has been a game changer.",
-    description: "As a global sustainable marketplace, our promotions finally work perfectly.",
-    company: "Flourish",
-    country: "India",
+    title: 'MarketWise Discount Ninja has been a game changer.',
+    description:
+      'As a global sustainable marketplace, our promotions finally work perfectly.',
+    company: 'Flourish',
+    country: 'India',
     logo: Flourish,
   },
 ];
 
-const Testimonials = () => {
+type Testimonial = (typeof testimonials)[number];
+
+const TestimonialCard: React.FC<{
+  item: Testimonial;
+  variant: Orientation;
+}> = ({ item, variant }) => {
+  const horizontal =
+    'w-[280px] md:w-full min-h-[360px] md:h-[420px] px-6 md:px-[35px] py-8 md:py-[40px]';
+  const vertical = 'w-full min-h-[220px] px-6 py-6';
+
   return (
-    <section className="w-full bg-white pt-20 md:pt-[30px] px-6 md:px-[30px] pb-10 md:pb-[40px]">
+    <div
+      className={`bg-white border border-[#E8E7E4] rounded-[20px] flex flex-col justify-between hover:shadow-md transition-shadow ${
+        variant === 'horizontal' ? horizontal : vertical
+      }`}
+    >
+      {/* Content */}
+      <div>
+        <div className="flex gap-1.5 mb-5">
+          {[...Array(5)].map((_, i) => (
+            <img key={i} src={Star} alt="star" className="w-4 md:w-5" />
+          ))}
+        </div>
+
+        <h3 className="font-satoshi font-bold text-lg md:text-xl text-[#120A0B] mb-3">
+          {item.title}
+        </h3>
+
+        <p className="font-satoshi text-sm md:text-base text-[#454140] leading-relaxed">
+          {item.description}{' '}
+          <span className="font-semibold underline cursor-pointer">
+            Read More
+          </span>
+        </p>
+      </div>
+
+      {/* Footer */}
+      <div className="flex items-center gap-3 mt-8">
+        <div
+          className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center ${
+            item.company === 'Numerana'
+              ? 'bg-[#5B356C]'
+              : 'border border-[#E8E7E4] bg-white'
+          }`}
+        >
+          <img
+            src={item.logo}
+            alt={item.company}
+            className="w-9 md:w-11 h-4 object-contain"
+          />
+        </div>
+
+        <div>
+          <p className="font-satoshi font-semibold text-xs md:text-sm text-[#120A0B]">
+            {item.company}
+          </p>
+          <p className="font-satoshi text-xs md:text-sm text-[#454140]">
+            {item.country}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Testimonials: React.FC<TestimonialsProps> = ({
+  orientation = 'horizontal',
+}) => {
+  // Duplicate for seamless vertical loop
+  const verticalTestimonials = [...testimonials, ...testimonials];
+
+  return (
+    <section className="w-full bg-white pt-20 px-6 pb-16 overflow-hidden">
       <div className="mx-auto max-w-[1920px]">
-        
-        {/* ================= HEADER ================= */}
-        <div className="text-center mb-10 md:mb-[39px] mt-20px">
-          <span className="inline-flex bg-[#FFD86F] px-[16px] py-[4px] rounded-full text-[12px] md:text-[14px] font-medium mb-4 md:mb-6">
+        {/* Header */}
+        <div className="text-center mb-14">
+          <span className="inline-flex bg-[#FFD86F] px-4 py-1 rounded-full text-xs md:text-sm font-medium mb-5">
             Testimonials
           </span>
 
-          <h2 className="font-satoshi font-bold text-3xl md:text-[48px] leading-tight md:leading-[58px] text-[#120A0B] mb-4">
+          <h2 className="font-satoshi font-bold text-3xl md:text-[48px] leading-tight text-[#120A0B] mb-4">
             Our success stories
           </h2>
 
-          <p className="font-satoshi text-sm md:text-[16px] text-[#454140] max-w-[520px] mx-auto">
+          <p className="font-satoshi text-sm md:text-base text-[#454140] max-w-[520px] mx-auto">
             Real stories from merchants who stopped losing revenue to pricing bugs
             and started scaling with precision.
           </p>
         </div>
 
-        {/* ================= SLIDER CONTAINER ================= */}
-        {/* On mobile: we allow horizontal scrolling. On desktop: we keep your overflow-hidden */}
-        <div className="mx-auto max-w-[1200px] overflow-x-auto md:overflow-hidden no-scrollbar">
-          
-          {/* Responsive Logic:
-              - Mobile: no translation, start from the left.
-              - Desktop: keep your exact md:translate-x-[-200px] for the "cut-off" look.
-          */}
-          <div className="flex gap-4 md:gap-[16px] translate-x-0 md:translate-x-[-200px] pb-4 md:pb-0">
-            {testimonials.map((item, index) => (
-              <div
-                key={index}
-                className="
-                  w-[280px] md:w-[384px]
-                  min-h-[350px] md:h-[407px]
-                  bg-white
-                  border
-                  border-[#E8E7E4]
-                  rounded-[20px]
-                  pt-8 md:pt-[40px]
-                  pb-8 md:pb-[40px]
-                  px-6 md:px-[35px]
-                  flex
-                  flex-col
-                  justify-between
-                  flex-shrink-0
-                "
-              >
-                {/* Stars */}
-                <div className="flex gap-[6px] mb-4 md:mb-[20px]">
-                  {[...Array(5)].map((_, i) => (
-                    <img key={i} src={Star} alt="star" className="w-4 md:w-[20px]" />
-                  ))}
-                </div>
+        {/* Content */}
+        <div className="mx-auto max-w-[1200px]">
+          {orientation === 'horizontal' ? (
+            <div className="flex md:grid grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible no-scrollbar pb-4">
+              {testimonials.map((item, index) => (
+                <TestimonialCard
+                  key={`${item.company}-${index}`}
+                  item={item}
+                  variant="horizontal"
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="relative h-[720px] overflow-hidden group">
+              {/* Fade overlays */}
+              <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
 
-                {/* Content */}
-                <div className="flex-1">
-                  <h3 className="font-satoshi font-bold text-lg md:text-[20px] text-[#120A0B] mb-[12px]">
-                    {item.title}
-                  </h3>
-
-                  <p className="font-satoshi text-sm md:text-[16px] text-[#454140] leading-relaxed md:leading-[26px]">
-                    {item.description}{" "}
-                    <span className="font-semibold underline cursor-pointer">
-                      Read More
-                    </span>
-                  </p>
-                </div>
-
-                {/* Footer */}
-                <div className="flex items-center gap-[12px] mt-6 md:mt-[32px]">
-                  <div
-                    className={`
-                      w-12 h-12 md:w-[56px] md:h-[56px]
-                      rounded-full
-                      flex
-                      items-center
-                      justify-center
-                      flex-shrink-0
-                      ${
-                        item.company === "Numerana"
-                          ? "bg-[#5B356C]"
-                          : "border border-[#E8E7E4] bg-white"
-                      }
-                    `}
-                  >
-                    <img
-                      src={item.logo}
-                      alt={item.company}
-                      className="w-[36px] md:w-[46px] h-[15px] object-contain"
-                    />
+              {/* Scrolling column */}
+              <div className="flex flex-col gap-6 animate-scroll-vertical group-hover:[animation-play-state:paused]">
+                {verticalTestimonials.map((item, index) => (
+                  <div key={`v-${index}`} className="px-1">
+                    <TestimonialCard item={item} variant="vertical" />
                   </div>
-
-                  <div>
-                    <p className="font-satoshi font-semibold text-xs md:text-[14px] text-[#120A0B]">
-                      {item.company}
-                    </p>
-                    <p className="font-satoshi text-xs md:text-[14px] text-[#454140]">
-                      {item.country}
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </div>
+
+      {/* Animation */}
+      <style jsx>{`
+        .animate-scroll-vertical {
+          animation: scroll-v 30s linear infinite;
+        }
+
+        @keyframes scroll-v {
+          0% {
+            transform: translateY(0);
+          }
+          100% {
+            transform: translateY(-50%);
+          }
+        }
+      `}</style>
     </section>
   );
 };
