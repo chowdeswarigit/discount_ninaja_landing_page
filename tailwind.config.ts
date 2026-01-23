@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,7 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'], // existing
+        satoshi: ['Satoshi', 'system-ui', 'sans-serif'], // ✅ added
       },
       colors: {
         border: "hsl(var(--border))",
@@ -60,7 +66,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        // Brand colors
         brand: {
           pink: "hsl(var(--brand-pink))",
           green: "hsl(var(--brand-green))",
@@ -69,7 +74,6 @@ export default {
           cyan: "hsl(var(--brand-cyan))",
           dark: "hsl(var(--brand-dark))",
         },
-        // Feature card colors
         "card-green": "hsl(var(--card-green))",
         "card-yellow": "hsl(var(--card-yellow))",
         "card-purple": "hsl(var(--card-purple))",

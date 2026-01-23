@@ -7,6 +7,9 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import ScrollToTop from "@/components/ScrollToTop";
 import NotFound from "./pages/NotFound";
+import  Blog from "./pages/Blog";
+import BlogDetailsPage from "./pages/blogDetailsData";
+import ChangeLog from "./pages/ChangeLog";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +23,10 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<  Blog/>} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/blogs/:slug" element={<BlogDetailsPage/>} />
+          <Route path="/changelog" element={<ChangeLog/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Ninja from "@/assets/images/frame.svg";
 import { Menu, X } from "lucide-react"; // Install lucide-react if you haven't
+            import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,22 +14,34 @@ const Header = () => {
           <div className="flex items-center justify-between">
             
             {/* LEFT: Logo + Nav */}
-            <div className="flex items-center gap-6 lg:gap-12">
-              <img
-                src={Ninja}
-                alt="Discount Ninja"
-                className="w-[110px] md:w-[128px] h-auto object-contain cursor-pointer"
-              />
 
-              {/* Desktop Nav */}
-              <nav className="hidden lg:flex items-center gap-8">
-                {["Features", "Plans",].map((item) => (
-                  <a key={item} href={`#${item.toLowerCase()}`} className="text-sm font-medium text-[#120A0B] hover:text-[#5952FF] transition-colors">
-                    {item}
-                  </a>
-                ))}
-              </nav>
-            </div>
+<div className="flex items-center gap-6 lg:gap-12">
+
+  {/* Logo → Home */}
+  <Link
+    to="/"
+    className="flex items-center hover:scale-105 transition-transform duration-300"
+  >
+    <img
+      src={Ninja}
+      alt="Discount Ninja"
+      className="w-[110px] md:w-[128px] h-auto object-contain"
+    />
+  </Link>
+
+  {/* Desktop Nav */}
+  <nav className="hidden lg:flex items-center gap-8">
+    {["Features", "Plans"].map((item) => (
+      <a
+        key={item}
+        href={`#${item.toLowerCase()}`}
+        className="text-sm font-medium text-[#120A0B] hover:text-[#5952FF] transition-colors"
+      >
+        {item}
+      </a>
+    ))}
+  </nav>
+</div>
 
             {/* RIGHT: Actions */}
             <div className="flex items-center gap-3 md:gap-6">

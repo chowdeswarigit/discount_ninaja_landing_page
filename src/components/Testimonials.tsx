@@ -1,6 +1,6 @@
-'use client';
-
 import React from 'react';
+
+// Assets
 import Star from '@/assets/images/star.svg';
 import Flourish from '@/assets/images/flourish.png';
 import Numerana from '@/assets/images/num.png';
@@ -63,7 +63,6 @@ const TestimonialCard: React.FC<{
         variant === 'horizontal' ? horizontal : vertical
       }`}
     >
-      {/* Content */}
       <div>
         <div className="flex gap-1.5 mb-5">
           {[...Array(5)].map((_, i) => (
@@ -83,7 +82,6 @@ const TestimonialCard: React.FC<{
         </p>
       </div>
 
-      {/* Footer */}
       <div className="flex items-center gap-3 mt-8">
         <div
           className={`w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center ${
@@ -115,13 +113,11 @@ const TestimonialCard: React.FC<{
 const Testimonials: React.FC<TestimonialsProps> = ({
   orientation = 'horizontal',
 }) => {
-  // Duplicate for seamless vertical loop
   const verticalTestimonials = [...testimonials, ...testimonials];
 
   return (
     <section className="w-full bg-white pt-20 px-6 pb-16 overflow-hidden">
       <div className="mx-auto max-w-[1920px]">
-        {/* Header */}
         <div className="text-center mb-14">
           <span className="inline-flex bg-[#FFD86F] px-4 py-1 rounded-full text-xs md:text-sm font-medium mb-5">
             Testimonials
@@ -137,7 +133,6 @@ const Testimonials: React.FC<TestimonialsProps> = ({
           </p>
         </div>
 
-        {/* Content */}
         <div className="mx-auto max-w-[1200px]">
           {orientation === 'horizontal' ? (
             <div className="flex md:grid grid-cols-2 lg:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible no-scrollbar pb-4">
@@ -151,38 +146,24 @@ const Testimonials: React.FC<TestimonialsProps> = ({
             </div>
           ) : (
             <div className="relative h-[720px] overflow-hidden group">
-              {/* Fade overlays */}
-              <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+              {/* Fade edges */}
+              <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent z-10" />
+              <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white to-transparent z-10" />
 
-              {/* Scrolling column */}
-              <div className="flex flex-col gap-6 animate-scroll-vertical group-hover:[animation-play-state:paused]">
-                {verticalTestimonials.map((item, index) => (
-                  <div key={`v-${index}`} className="px-1">
-                    <TestimonialCard item={item} variant="vertical" />
-                  </div>
-                ))}
+              {/* Scrolling track */}
+              <div className="animate-scroll-vertical group-hover:[animation-play-state:paused]">
+                <div className="flex flex-col gap-6">
+                  {verticalTestimonials.map((item, index) => (
+                    <div key={`v-${index}`} className="px-1">
+                      <TestimonialCard item={item} variant="vertical" />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           )}
         </div>
       </div>
-
-      {/* Animation */}
-      <style jsx>{`
-        .animate-scroll-vertical {
-          animation: scroll-v 30s linear infinite;
-        }
-
-        @keyframes scroll-v {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-50%);
-          }
-        }
-      `}</style>
     </section>
   );
 };

@@ -1,199 +1,182 @@
-  'use client';
+'use client'
 
-  import React, { useEffect, useRef, useState } from 'react';
-  import Testimonials from "@/components/Testimonials";
+import React from 'react'
+import { ArrowRight, Globe } from 'lucide-react'
 
-  // --------------------
-  // TYPES
-  // --------------------
-  interface CoreValue {
-    title: string;
-    description: string;
-    icon: React.ReactNode;
-  }
+const MarketwiseAbout = () => {
+  return (
+    <div className="bg-[#fcfcfd] text-[#1a1a1a] font-satoshi selection:bg-orange-100 selection:text-orange-900">
 
-  interface Stat {
-    label: string;
-    value: number;
-    suffix?: string;
-  }
+      {/* ================= HERO ================= */}
+      <section className="pt-24 pb-10 px-6 text-center">
+        <div className="max-w-5xl mx-auto">
 
-  // --------------------
-  // COUNT UP COMPONENT
-  // --------------------
-  interface CountUpProps {
-    end: number;
-    duration?: number;
-    suffix?: string;
-  }
-
-  const CountUp: React.FC<CountUpProps> = ({
-    end,
-    duration = 1500,
-    suffix = '',
-  }) => {
-    const [count, setCount] = useState(0);
-    const startTime = useRef<number | null>(null);
-
-    useEffect(() => {
-      const animate = (time: number) => {
-        if (!startTime.current) startTime.current = time;
-        const progress = Math.min((time - startTime.current) / duration, 1);
-        setCount(Math.floor(progress * end));
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      };
-
-      requestAnimationFrame(animate);
-    }, [end, duration]);
-
-    return (
-      <span>
-        {count}
-        {suffix}
-      </span>
-    );
-  };
-
-  // --------------------
-  // MAIN COMPONENT
-  // --------------------
-  const DiscountNinjaAbout: React.FC = () => {
-   const stats = [
-  {
-    label: "Active Merchants",
-    value: 10000,
-    suffix: "+",
-    description: "Trusted by thousands of merchants worldwide using Discount Ninja daily.",
-  },
-  {
-    label: "Revenue Generated",
-    value: 500,
-    suffix: "M+",
-    description: "Total merchant revenue powered through optimized promotions.",
-  },
-  {
-    label: "Promotion Types",
-    value: 25,
-    suffix: "+",
-    description: "Flexible discount types built for modern Shopify stores.",
-  },
-  {
-    label: "Support Rating",
-    value: 49,
-    suffix: "/5",
-    description: "Highly rated support from merchants and partners globally.",
-  },
-];
-
-
-    const values: CoreValue[] = [
-      {
-        title: 'Performance First',
-        description:
-          "We build tools that don't just look good, but actively drive AOV and conversion rates through smart logic.",
-        icon: (
-          <svg className="w-6 h-6 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-          </svg>
-        ),
-      },
-      {
-        title: 'Seamless Integration',
-        description:
-          'Deeply integrated with Shopify Functions to ensure your store remains fast, stable, and native.',
-        icon: (
-          <svg className="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
-          </svg>
-        ),
-      },
-      {
-        title: 'Merchant-Centric',
-        description:
-          'Our roadmap is driven by the real-world needs of high-volume Shopify brands and developers.',
-        icon: (
-          <svg className="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-        ),
-      },
-    ];
-
-    return (
-      <div className="bg-white text-slate-900">
-        {/* HERO */}
-        <section className="pt-24 pb-16 px-6 text-center">
-          <span className="inline-block mt-6 px-3 py-1 rounded-full bg-orange-50 text-orange-600 text-sm font-bold mb-4">
-            OUR STORY
-          </span>
-          <h1 className="text-4xl md:text-5xl font-black mb-6">
-            Empowering brands to <br />
-            <span className="text-orange-600 italic">sell smarter.</span>
+          <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mt-14 text-gray-800">
+            Global commerce, <br />
+            <span className="italic font-medium">
+              without the headache.
+            </span>
           </h1>
-          <p className="text-lg text-slate-500 max-w-2xl mx-auto">
-            Discount Ninja was built to help Shopify merchants create smarter,
-            high-converting promotions without complexity.
+
+          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto font-light leading-relaxed">
+            Running a store across multiple markets shouldn’t feel like juggling flaming swords.
           </p>
-        </section>
 
-        {/* STATS */}
-        <section className="py-12 border-y border-slate-100">
-<div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-  {stats.map((stat, i) => (
-    <div
-      key={i}
-      className="
-        bg-white
-        border border-slate-100
-        rounded-3xl
-        p-8
-        text-center
-        shadow-sm
-        hover:shadow-md
-        transition-shadow
-      "
-    >
-      <p className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
-        <CountUp end={stat.value} suffix={stat.suffix} />
-      </p>
+        </div>
+      </section>
 
-      <p className="text-sm text-slate-500 font-semibold uppercase tracking-wider mb-3">
-        {stat.label}
-      </p>
+      {/* ================= PHILOSOPHY / MANIFESTO ================= */}
+      <section className="px-6 py-8">
+        <div className="max-w-3xl mx-auto space-y-6">
 
-      <p className="text-sm text-slate-600 leading-relaxed">
-        {stat.description}
-      </p>
-    </div>
-  ))}
-</div>
+          <p className="text-2xl font-bold text-gray-800">
+            We believe global commerce should feel simple.
+          </p>
 
-        </section>
+          <p className="text-lg leading-relaxed text-gray-800 font-light">
+            Selling across borders is no longer a luxury — it’s the natural direction of modern commerce.
+            Customers expect local pricing, familiar currencies, and experiences that feel native wherever they are.
+          </p>
 
-        {/* VALUES */}
-        <section className="py-24 bg-slate-50 px-6">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 bg-white">
-            {values.map((value, i) => (
-              <div
-                key={i}
-                className="bg-white p-10 rounded-3xl border border-slate-100 hover:shadow-md transition"
-              >
-                <div className="w-12 h-12 bg-slate-50 rounded-2xl flex items-center justify-center mb-6">
-                  {value.icon}
-                </div>
-                <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                <p className="text-slate-500">{value.description}</p>
-              </div>
-            ))}
+          <p className="text-lg leading-relaxed text-gray-800 font-light">
+            Yet for many merchants, growth introduces friction instead of freedom.
+            More markets mean more complexity. More tools. More workarounds.
+            More time spent managing systems instead of building a business.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-800 font-light">
+            Marketwise exists to change that.
+
+            We build focused tools that help Shopify merchants operate globally
+            without losing clarity, control, or momentum.
+          </p>
+
+          <p className="text-2xl font-bold text-gray-800 pt-4">
+            We believe scale should not come at the cost of clarity.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-800 font-light">
+            As businesses expand, systems often become fragile.
+            Decisions multiply. Context gets lost.
+            What once felt intuitive starts to feel unpredictable.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-800 font-light">
+            We don’t believe that’s inevitable.
+            Pricing should be intentional. Marketing should be contextual.
+            Operations should feel steady — not held together by workarounds.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-800 font-light">
+            Our goal is to reduce cognitive load.
+            Fewer systems to reconcile. Fewer decisions to second-guess.
+            More space to think clearly and grow with confidence.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-800 font-light">
+            We are merchants-first, through and through.
+            That means real support when it matters most —
+            during launches, promotions, and moments when every decision counts.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-800 font-light">
+            Most of our best ideas don’t come from a roadmap.
+            They come from listening to merchants navigating real markets,
+            real customers, and real constraints every day.
+          </p>
+
+        </div>
+      </section>
+
+      {/* ================= QUESTIONS & ANSWERS ================= */}
+      <section className="px-6 py-8 border-t border-gray-100">
+        <div className="max-w-3xl mx-auto space-y-8">
+
+          <div>
+            <h3 className="text-sm font-extrabold uppercase tracking-[0.3em] text-gray-800 mb-2">
+              Why Marketwise?
+            </h3>
+            <p className="text-lg leading-relaxed text-gray-800 font-light">
+              Because global selling shouldn’t require stitching together a dozen tools.
+              We focus on the problems that compound as you grow — pricing consistency,
+              localization, and operational clarity.
+            </p>
           </div>
-        </section>
-        {/* VERTICAL TESTIMONIALS (scrollable) */}
-        <Testimonials orientation="vertical" />
-      </div>
-    );
-  };
 
-  export default DiscountNinjaAbout;
+          <div>
+            <h3 className="text-sm font-extrabold uppercase tracking-[0.3em] text-gray-800 mb-2">
+              Who is Marketwise for?
+            </h3>
+            <p className="text-lg leading-relaxed text-gray-800 font-light">
+              Shopify merchants expanding beyond their home market
+              who want systems that scale with them — not against them.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-extrabold uppercase tracking-[0.3em] text-gray-800 mb-2">
+              What makes you different?
+            </h3>
+            <p className="text-lg leading-relaxed text-gray-800 font-light">
+              We don’t chase feature checklists.
+              Every feature exists because a merchant needed it.
+              If it doesn’t earn its place, we don’t ship it.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-sm font-extrabold uppercase tracking-[0.3em] text-gray-800 mb-2">
+              How do you approach support?
+            </h3>
+            <p className="text-lg leading-relaxed text-gray-800 font-light">
+              Support is a partnership.
+              When something matters to your business,
+              it matters to us — with real humans and real context.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ================= CONCLUSION ================= */}
+      <section className="px-6 py-16 border-t border-gray-100 text-center">
+        <div className="max-w-4xl mx-auto">
+
+          <Globe size={52} strokeWidth={1} className="mx-auto mb-6 text-gray-300" />
+
+          <h2 className="text-4xl md:text-5xl font-bold mb-5 text-gray-800">
+            Your co-pilot for <br />
+            <span className="italic font-medium text-5xl md:text-6xl">
+              global growth.
+            </span>
+          </h2>
+
+          <div className="space-y-4 max-w-2xl mx-auto mb-10">
+            <p className="text-lg text-gray-500 font-light leading-relaxed">
+              Think of us less like a software company and more like a partner.
+              We’re here to help you scale with confidence, one market at a time.
+            </p>
+
+            <p className="text-lg text-gray-500 font-light leading-relaxed">
+              As your business grows, complexity shouldn’t grow with it.
+              Our role is to remove friction — so you can focus on what matters.
+            </p>
+          </div>
+
+          <button className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-[#1a1a1a] text-white font-bold hover:bg-gray-800 transition-all shadow-lg">
+            Join the mission
+            <ArrowRight size={18} />
+          </button>
+
+          <p className="mt-10 text-[10px] font-black tracking-[0.4em] uppercase text-gray-300">
+            Marketwise · Est. 2024
+          </p>
+
+        </div>
+      </section>
+
+    </div>
+  )
+}
+
+export default MarketwiseAbout
