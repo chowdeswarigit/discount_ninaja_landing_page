@@ -8,7 +8,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-4 md:top-6 left-0 right-0 z-50 transition-all duration-300">
+    <header className="relative top-4 md:top-6 left-0 right-0 z-50 transition-all duration-300">
       <div className="mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-[1280px] w-full bg-white rounded-[20px] md:rounded-[24px] shadow-lg px-4 md:px-[20px] py-3 md:py-[16px] border border-gray-100">
           <div className="flex items-center justify-between">
