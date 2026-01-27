@@ -22,7 +22,7 @@ app.post('/api/subscribe', async (req, res) => {
 
   try {
     const data = await resend.emails.send({
-      from: 'support@mail.kloc.dev',
+      from: 'support@mail.marketwise.dev',
       to: 'chowdeswari599@gmail.com', // Replace with owner's email
       subject: 'New Newsletter Subscription',
       html: `<p>A new user has subscribed to the newsletter with email: <strong>${email}</strong></p>`,
