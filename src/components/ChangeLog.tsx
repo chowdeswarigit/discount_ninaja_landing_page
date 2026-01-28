@@ -5,7 +5,7 @@ import React from 'react'
 const changelogData = [
   {
     version: '2.0.0',
-    date: 'Jan 29, 2025',
+    date: 'Jan 29, 2026',
     title: 'Advanced discounting & UI improvements',
     points: [
       'Added the ability to create order-level discounts, allowing merchants to combine order discounts with other discount types.',
@@ -19,7 +19,7 @@ const changelogData = [
   },
   {
     version: '1.0.0',
-    date: 'Sep 26, 2024',
+    date: 'Sep 26, 2025',
     title: 'Initial release',
     points: [
       'Target discounts to specific Shopify Markets such as UK, USA, UAE, and more.',
