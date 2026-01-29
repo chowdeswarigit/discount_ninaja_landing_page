@@ -18,7 +18,7 @@ const MarketwiseAbout = () => {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-800 max-w-2xl mx-auto font-light leading-relaxed mt-5">
             Running a store across multiple markets shouldn’t feel like juggling flaming swords.
           </p>
 

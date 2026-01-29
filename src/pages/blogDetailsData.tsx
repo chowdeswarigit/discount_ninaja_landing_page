@@ -3,33 +3,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Calendar, Clock, ChevronRight } from 'lucide-react'
-import Header  from '@/components/Header'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+
 const BlogDetailPage = () => {
   return (
-    <div className="bg-[#FCFCFC] min-h-screen text-gray-800 font-serif">
-      <Header/>
+    <div className="bg-[#FCFCFC] min-h-screen text-gray-800 font-satoshi">
+      <Header />
 
+      {/* ================= BLOG HEADER ================= */}
+      <header className="pt-32 pb-10 px-5 sm:px-6 max-w-3xl mx-auto">
+        {/* Back */}
+        <div className="mb-6 mt-20">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 transition"
+          >
+            <ArrowLeft size={16} />
+            <span>Back to blog</span>
+          </Link>
+        </div>
 
-      {/* ================= HEADER ================= */}
-
-      <header className="pt-26 mt-20 sm:pt-28 pb-8 px-5 sm:px-6 max-w-3xl mx-auto">
-        {/* <p className="text-[11px] uppercase tracking-widest text-gray-500 mb-3 font-sans">
-          Seasonal and Festive Discount Campaigns · Dec 17, 2025
-        </p> */}
-       <div className="relative">
-  <div className="mb-6">
-  <Link
-    to="/blog"
-    className="inline-flex items-center gap-2 text-sm font-sans text-gray-500 hover:text-gray-900 transition"
-  >
-    <ArrowLeft size={16} />
-    <span>Back to blog</span>
-  </Link>
-</div>
-
-</div>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-5 font-sans">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-5">
           Precision Pricing: Geo-Targeted 11.11 and Lunar New Year Discount
           Strategies for East Asia
         </h1>
@@ -39,7 +34,7 @@ const BlogDetailPage = () => {
           without sacrificing margin or control.
         </p>
 
-        <div className="flex flex-wrap items-center gap-5 py-4 border-y border-gray-100 font-sans text-sm text-gray-400">
+        <div className="flex flex-wrap items-center gap-5 py-4 border-y border-gray-100 text-sm text-gray-400">
           <span className="flex items-center">
             <Calendar size={14} className="mr-2" /> Dec 17, 2025
           </span>
@@ -50,7 +45,7 @@ const BlogDetailPage = () => {
       </header>
 
       {/* ================= CONTENT ================= */}
-      <main className="max-w-3xl mx-auto px-5 sm:px-6 pb-24 space-y-6 text-base sm:text-lg leading-relaxed text-gray-700">
+      <main className="max-w-3xl mx-auto px-5 sm:px-6 pb-28 space-y-6 text-base sm:text-lg leading-relaxed text-gray-700">
 
         {/* INTRO */}
         <p className="first-letter:text-5xl sm:first-letter:text-6xl first-letter:font-bold first-letter:text-gray-900 first-letter:mr-2 first-letter:float-left">
@@ -80,7 +75,7 @@ const BlogDetailPage = () => {
         </p>
 
         {/* ================= SECTION 1 ================= */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 font-sans pt-8">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 pt-10">
           The Scale and Nuance of East Asia’s Mega Sales
         </h2>
 
@@ -90,7 +85,7 @@ const BlogDetailPage = () => {
           pressures, and purchasing behaviors depending on location.
         </p>
 
-        <h3 className="text-lg sm:text-xl font-bold text-gray-900 font-sans pt-4">
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900 pt-4">
           The Scale of Opportunity
         </h3>
 
@@ -107,7 +102,7 @@ const BlogDetailPage = () => {
           on preparation, not just deep discounts.
         </p>
 
-        <h3 className="text-lg sm:text-xl font-bold text-gray-900 font-sans pt-4">
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900 pt-4">
           Geo-Targeting: Why One Size Doesn’t Fit
         </h3>
 
@@ -123,7 +118,7 @@ const BlogDetailPage = () => {
         </p>
 
         {/* ================= SECTION 2 ================= */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 font-sans pt-8">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 pt-10">
           Tiered 11.11 Discounts (China)
         </h2>
 
@@ -132,7 +127,7 @@ const BlogDetailPage = () => {
           Progressive thresholds consistently outperform flat discounts.
         </p>
 
-        <ul className="bg-gray-50 rounded-xl p-5 space-y-1 font-sans text-sm sm:text-base">
+        <ul className="bg-gray-50 rounded-xl p-5 space-y-1 text-sm sm:text-base">
           <li>¥500 → 10% off</li>
           <li>¥1200 → 15% off</li>
           <li>¥2500 → 20% off</li>
@@ -154,11 +149,11 @@ const BlogDetailPage = () => {
         </p>
 
         {/* ================= SECTION 3 ================= */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 font-sans pt-8">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 pt-10">
           Lunar New Year Gifting (Singapore & Korea)
         </h2>
 
-        <h3 className="text-lg sm:text-xl font-bold text-gray-900 font-sans pt-4">
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900 pt-4">
           Singapore: Prosperity Bundles
         </h3>
 
@@ -167,7 +162,7 @@ const BlogDetailPage = () => {
           is always the lowest-priced product.
         </p>
 
-        <h3 className="text-lg sm:text-xl font-bold text-gray-900 font-sans pt-4">
+        <h3 className="text-lg sm:text-xl font-bold text-gray-900 pt-4">
           South Korea: GWP & Flash Sales
         </h3>
 
@@ -177,7 +172,7 @@ const BlogDetailPage = () => {
         </p>
 
         {/* ================= SECTION 4 ================= */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 font-sans pt-8">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 pt-10">
           Strategic Price Differentiation
         </h2>
 
@@ -188,7 +183,7 @@ const BlogDetailPage = () => {
         </p>
 
         {/* ================= SECTION 5 ================= */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 font-sans pt-8">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 pt-10">
           Flawless Execution with Advanced Discount Logic
         </h2>
 
@@ -204,9 +199,9 @@ const BlogDetailPage = () => {
         </p>
 
         {/* ================= CONCLUSION ================= */}
-        <hr className="my-10 border-gray-100" />
+        <hr className="my-12 border-gray-100" />
 
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 font-sans">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
           Conclusion
         </h2>
 
@@ -217,7 +212,7 @@ const BlogDetailPage = () => {
         </p>
 
         {/* ================= CTA ================= */}
-        <section className="bg-gray-900 rounded-2xl p-6 sm:p-8 text-white font-sans mt-10">
+        <section className="bg-gray-900 rounded-2xl p-6 sm:p-8 text-white mt-12">
           <h3 className="text-xl sm:text-2xl font-bold mb-3">
             Ready to launch precision discounts?
           </h3>
@@ -232,9 +227,9 @@ const BlogDetailPage = () => {
             </button>
           </Link>
         </section>
-   
       </main>
-       <Footer/>
+
+      <Footer />
     </div>
   )
 }
