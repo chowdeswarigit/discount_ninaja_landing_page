@@ -59,7 +59,7 @@ const Features = () => {
         
         {/* ================= HEADER ================= */}
         <div className="text-center mb-12 md:mb-[96px]">
-          <div className="inline-flex items-center bg-[#FFD86F] rounded-full px-4 py-1 text-[13px] font-bold text-black mb-6">
+          <div className="inline-flex items-center bg-[#FFD86F] rounded-full px-3.5 py-2 text-[13px] font-bold text-black mb-6">
             Features
           </div>
           <h2 className="font-satoshi font-bold text-2xl md:text-[56px] leading-tight md:leading-[67.2px] tracking-tight text-[#120A0B] mb-4">
@@ -79,7 +79,7 @@ const Features = () => {
                   onClick={() => setActiveTab(index)}
                   className={`
                     px-5 md:px-6 py-2 md:py-2.5 rounded-full text-[12px] md:text-sm font-medium transition-all
-                    ${activeTab === index ? "bg-[#FC3A83] text-white shadow-lg" : "text-black hover:bg-gray-200"}
+                    ${activeTab === index ? "bg-[#FC3A83] text-white " : ""}
                   `}
                 >
                   {tab}

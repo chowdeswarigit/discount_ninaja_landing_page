@@ -135,3 +135,13 @@
     transform: translateY(-50%);
   }
 }
+/* This bypasses the Tailwind compiler and forces the 16px size */
+p {
+  font-size: 16px !important;
+  line-height: 1.625 !important; /* Optional: improves readability at 16px */
+}
+
+/* If you only want it for the "Why Choose Us" description specifically */
+.benefit-text {
+  font-size: 16px !important;
+}

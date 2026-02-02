@@ -8,9 +8,15 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5000',
+        changeOrigin: true,
+      },
+    },
     // Add the allowedHosts property here
     allowedHosts: [
-      "b96e20f2793e.ngrok-free.app" ,"26784fb88ad5.ngrok-free.app","7bdb7ffbc93e.ngrok-free.app"
+      "b96e20f2793e.ngrok-free.app" ,"26784fb88ad5.ngrok-free.app","7bdb7ffbc93e.ngrok-free.app","4c3c820129c4.ngrok-free.app"
     ],
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),

@@ -45,7 +45,7 @@ export default function FAQSection() {
 
         {/* Title */}
         <h2 className="font-satoshi font-bold text-2xl leading-[58px] text-[#120A0B] mb-4">
-          Frequently asked questions
+          Frequently Asked Questions
         </h2>
 
         {/* Subtitle */}

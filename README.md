@@ -71,3 +71,40 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Google Calendar booking (server-side)
+
+This project includes a server endpoint to create Google Calendar events on the owner's calendar: `POST /api/book-call`.
+
+Required environment variables (add to your `.env`):
+
+- `GOOGLE_CLIENT_ID` – OAuth client ID from Google Cloud Console
+- `GOOGLE_CLIENT_SECRET` – OAuth client secret
+- `GOOGLE_REFRESH_TOKEN` – a refresh token for the owner's account (see notes below)
+- `CALENDAR_ID` – optional, defaults to `primary`
+
+Notes:
+- The server uses the OAuth2 refresh token to obtain access tokens and create events using the Google Calendar API. To obtain a refresh token for your account you can use the OAuth 2.0 Playground or a one-off script that requests the `https://www.googleapis.com/auth/calendar` scope with `access_type=offline`.
+- Ensure the Google Calendar API is enabled in your Google Cloud project and the OAuth consent screen is configured.
+
+Quick test (after setting env and installing dependencies):
+
+```bash
+# install server dependency
+npm install googleapis
+
+# run the server
+node server.js
+```
+
+Then from the client (the header booking dialog) you can submit a booking which will call `/api/book-call` and create the event on the configured calendar.
+
+Interactive connect flow:
+
+- To let the owner connect their Google account interactively, visit:
+
+	- `GET /api/auth/google` — redirects to Google's OAuth consent screen. After consenting, Google will redirect back to `/api/auth/google/callback` which stores the returned tokens in `google_tokens.json` in the project root.
+
+- After connecting, check status at `GET /api/auth/google/status` which returns JSON `{ connected: true }` when tokens are present.
+
+- Notes: The server persists tokens to `google_tokens.json`. Ensure the server process has write permission to the project directory.

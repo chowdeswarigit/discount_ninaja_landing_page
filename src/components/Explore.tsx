@@ -10,7 +10,7 @@ const Explore = () => {
           mx-auto
           w-full
           max-w-[1200px]
-          min-h-[824px]
+          min-h-[860px]
           bg-[#2FA3A2]
           rounded-[25px]
           relative
@@ -34,7 +34,7 @@ const Explore = () => {
 
         {/* ================= TITLE ================= */}
         <h2 className="mt-6 font-satoshi font-bold text-3xl md:text-[40px] md:leading-[52px] text-white text-center max-w-[800px]">
-          Start bundling with discounts today
+          Start Bundling with Discounts Today
         </h2>
 
         {/* ================= INPUT ROW ================= */}

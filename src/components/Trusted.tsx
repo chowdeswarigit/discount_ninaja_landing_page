@@ -50,7 +50,7 @@ const Trusted = () => {
       {/* ================= WHY CHOOSE US ================= */}
       <div className="mt-16 md:mt-20 mx-auto max-w-[1280px] px-[20px] text-center">
         {/* Badge */}
-        <div className="inline-flex items-center bg-[#FFD86F] rounded-[16px] px-[16px] py-[2px] text-[13px] md:text-[14px] font-satoshi font-medium text-[#120A0B] mb-6">
+        <div className="inline-flex items-center bg-[#FFD86F] rounded-[16px] px-[16px] py-[6px] text-[13px] md:text-[14px] font-satoshi font-medium text-[#120A0B] mb-6">
           Why Choose Us
         </div>
 

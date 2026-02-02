@@ -18,8 +18,8 @@ const Pricing = () => {
       <div className="mx-auto max-w-[1200px]">
         {/* ================= HEADER ================= */}
         <div className="text-center mb-[48px]">
-          <span className="inline-flex items-center justify-center bg-[#FFD86F] px-[16px] py-[4px] rounded-full text-[14px] font-medium mb-6">
-            Pricing plan
+          <span className="inline-flex items-center justify-center bg-[#FFD86F] px-[16px] py-[6px] rounded-full text-[14px] font-medium mb-6">
+            Pricing Plan
           </span>
 
           <h2 className="font-satoshi font-bold text-3xl md:text-[48px] md:leading-[58px] text-[#120A0B] mb-4">
@@ -79,19 +79,24 @@ const Pricing = () => {
             
             {/* FIXED BADGE POSITIONING FOR MEDIUM DEVICES */}
            {/* MOVE TO RIGHT: Adjusted 'right' and 'translate' values */}
-<div className="absolute -top-12 md:-top-16 right-[-10px] md:right-0 lg:-right-12 flex flex-col items-center z-20 pointer-events-none">
-    {/* Arrow: Positioned above the badge */}
-    <img
-        src={Arrow}
-        alt="arrow"
-        className="hidden lg:block w-[70px] mb-[-10px] ml-16 rotate-[15deg] opacity-90"
-    />
-    
-    {/* Save Badge: Rotated and border-styled */}
-    <span className="inline-flex items-center justify-center bg-[#5952FF] text-white text-[12px] md:text-[14px] font-bold px-5 py-2 rounded-full rotate-[10deg] shadow-xl whitespace-nowrap border-2 border-white">
-        Save 10%
-    </span>
+{/* Arrow + Save badge positioned like design */}
+<div className="hidden lg:flex absolute -top-10 right-[-60px] flex-col items-start">
+  {/* Arrow shifted left */}
+  <img
+    src={Arrow}
+    alt="arrow"
+    className="w-[70px] rotate-[18deg] ml-2"
+  />
+
+  {/* Badge shifted right */}
+ <span className="mt-2 translate-x-[90px] bg-[#5952FF] text-white text-[14px] font-bold px-5 py-2 rounded-full rotate-[10deg] border-2 border-white whitespace-nowrap">
+  Save 10%
+</span>
+
 </div>
+
+
+
 
             <div className="w-full bg-white rounded-[24px] px-[16px] py-[24px] shadow-sm">
               <span className="inline-flex items-center justify-center bg-[#2FA3A2] text-white px-6 py-2 rounded-full text-[14px] font-medium mb-4">
