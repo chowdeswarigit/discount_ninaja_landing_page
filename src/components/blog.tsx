@@ -6,6 +6,22 @@ import { Clock, ChevronRight } from 'lucide-react'
 
 const blogs = [
   {
+    slug: '/blogs/beauty-brands-personalized-discounts', // ✅ New Blog Added
+    category: 'Niche Discount Campaigns',
+    date: 'Feb 02, 2026',
+    readTime: '11 min read',
+    title: 'How Beauty Brands Can Use Personalized Discounts to Boost Repeat Purchases Across Regions',
+    excerpt: 'Acquiring beauty customers is costly. Learn how to use purchase behavior, replenishment cycles, and regional market dynamics to transform one-time buyers into loyal advocates.'
+  },
+  {
+    slug: '/blogs/why-shopify-discounts-fall-short',
+    category: 'Ecosystem',
+    date: 'Feb 02, 2026',
+    readTime: '10 min read',
+    title: 'Why Shopify Discounts Fall Short for Multi-Market and Global Stores',
+    excerpt: 'Executing localized pricing is the hidden technical bottleneck for Shopify Plus merchants. Learn why native tools struggle with multi-market complexity.'
+  },
+  {
     slug: '/blogs/precision-pricing-east-asia',
     category: 'Seasonal & Festive Discount Campaigns',
     date: 'Dec 17, 2025',
@@ -51,7 +67,7 @@ const blogs = [
       'Preventing Discount Leakage with Shopify Markets and Advanced Rules',
     excerpt:
       'When discounts leak across borders, margins disappear. This guide explains geo-enforcement, rule stacking, and why native Shopify discounts fall short.'
-  }
+  },
 ]
 
 const BlogListPage = () => {

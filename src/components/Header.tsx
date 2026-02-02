@@ -22,6 +22,7 @@ const Header = () => {
   const [bookingLoading, setBookingLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [storeName, setStoreName] = useState(""); 
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
 
@@ -80,7 +81,7 @@ const Header = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name,
-          email,
+          email,storeName,
           startIso: combinedDateTime.toISOString(),
           durationMinutes: 30,
         }),
@@ -197,7 +198,7 @@ const Header = () => {
               30 Minute Exploratory Call
             </h2>
 
-            <div className="flex flex-col gap-4 mt-8 text-gray-600">
+            <div className="flex flex-col gap-4 mt-8 text-gray-600 max-w-[520px]">
               <div className="flex items-center gap-3 font-semibold">
                 <Clock size={20} className="text-gray-400" />
                 <span>30 min</span>
@@ -214,6 +215,7 @@ const Header = () => {
                 <Globe size={20} className="text-gray-400" />
                 <span>India Standard Time</span>
               </div>
+              <p className="whitespace-normal break-keep leading-relaxed">This will be an exploratory call to understand your requirements and provide you with the right solution.</p>
             </div>
           </div>
 
@@ -278,6 +280,17 @@ const Header = () => {
                     className="h-12"
                   />
                 </div>
+                <div className="space-y-2">
+  <label className="text-sm font-bold text-gray-700">Store Name *</label>
+  <Input
+    type="text"
+    placeholder="e.g. My Beauty Shop"
+    value={storeName}
+    onChange={(e) => setStoreName(e.target.value)}
+    required
+    className="h-12"
+  />
+</div>
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-gray-700">Additional Notes</label>
                   <textarea className="w-full min-h-[120px] p-3 border rounded-md border-gray-200 focus:border-blue-600 focus:ring-1 focus:ring-blue-600 outline-none" />

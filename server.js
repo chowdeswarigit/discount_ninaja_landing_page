@@ -107,9 +107,9 @@ app.post('/api/subscribe', async (req, res) => {
 
 // ================== BOOK CALL API ==================
 app.post('/api/book-call', async (req, res) => {
-  const { name, email, startIso } = req.body;
+  const { name, email, startIso, storeName } = req.body;
 
-  if (!name || !email || !startIso) {
+  if (!name || !email || !startIso || !storeName) {
     return res.status(400).json({ error: 'Missing fields' });
   }
 
@@ -118,8 +118,10 @@ app.post('/api/book-call', async (req, res) => {
     const end = new Date(start.getTime() + 30 * 60000);
 
     const event = {
-      summary: `Call with ${name}`,
-      description: `Name: ${name}\nEmail: ${email}`,
+      summary: `Call with ${name} (${storeName})`,
+      description: `Name: ${name}
+Email: ${email}
+Store Name: ${storeName}`,
       start: { dateTime: start.toISOString() },
       end: { dateTime: end.toISOString() },
       attendees: [{ email }],
