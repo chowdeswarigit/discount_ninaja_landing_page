@@ -48,7 +48,15 @@ const BlogDetailPage = () => {
         <div className="flex flex-wrap items-center gap-5 py-4 border-y border-gray-100 text-sm text-gray-400">
           <span className="flex items-center">
             <Calendar size={14} className="mr-2" />{" "}
-            {isShortfallBlog || isBeautyBlog ? "Feb 02, 2026" : "Dec 17, 2025"}
+        <span className="flex items-center">
+  <Calendar size={14} className="mr-2" />{" "}
+  {isShortfallBlog
+    ? "Jan 22, 2026"
+    : isBeautyBlog
+    ? "Jan 29 2026"
+    : "Jan 15, 2026"}
+</span>
+
           </span>
           <span className="flex items-center">
             <Clock size={14} className="mr-2" />{" "}
@@ -159,9 +167,9 @@ const BlogDetailPage = () => {
         ) : isBeautyBlog ? (
           /* ================= FULL CONTENT: BEAUTY BRANDS PERSONALIZED DISCOUNTS ================= */
           <>
-            <p className="text-xs uppercase tracking-[0.25em] text-gray-500 mb-2">
+            {/* <p className="text-xs uppercase tracking-[0.25em] text-gray-500 mb-2">
               Content Pillar: Niche Discount Campaigns · Generated: 2026-02-02
-            </p>
+            </p> */}
 
             <p className="first-letter:text-5xl sm:first-letter:text-6xl first-letter:font-bold first-letter:text-gray-900 first-letter:mr-2 first-letter:float-left">
               Acquiring new customers in beauty e-commerce is costly. Industry data consistently
@@ -606,9 +614,8 @@ const BlogDetailPage = () => {
 
           <Link to="/">
             <button 
-              className={`font-bold py-3 px-8 rounded-lg inline-flex items-center transition-all ${
-                isShortfallBlog ? 'bg-[#2FA3A2] hover:bg-[#268a89]' : 'bg-indigo-600 hover:bg-indigo-700'
-              }`}
+              className="font-bold py-3 px-8 rounded-lg inline-flex items-center transition-all bg-[#2FA3A2] hover:bg-[#268a89]"
+
             >
               Schedule a Demo <ChevronRight size={18} className="ml-2" />
             </button>

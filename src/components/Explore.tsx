@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import Exploreimg from "@/assets/images/explorenow.png";
+import Exploreimg from "@/assets/images/explore1.png";
 import SwirlImage from "@/assets/images/spring2.png"; // ✅ Import the same swirl asset
 
 const Explore = () => {
@@ -136,10 +136,11 @@ className="absolute right-[-38%] bottom-[-19%] w-[40%] lg:w-[70%] max-w-none opa
             {/* ================= RIGHT CONTAINER ================= */}
             <div className="flex-1 flex flex-col gap-5 text-[#120A0B] ">
               <img 
-                src={Exploreimg} 
-                alt="explore now" 
-                className="w-full h-auto rounded-lg -mt-2 md:-mt-6 object-top "
-              />
+  src={Exploreimg} 
+  alt="explore now" 
+  className="w-[85%] h-auto rounded-lg  object-top"
+/>
+
             </div>
           </div>
 
