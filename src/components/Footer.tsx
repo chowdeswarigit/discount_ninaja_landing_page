@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FooterCTA from "./FooterCTA";
-import Ninja from "@/assets/images/frame.svg";
+import Ninja from "@/assets/images/Ninja Logo - Transparent BG.png";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -57,7 +57,7 @@ const Footer = () => {
             <img
               src={Ninja}
               alt="Discount Ninja"
-              className="w-40 mb-6"
+              className="w-40 mb-4 -mt-6"
             />
             <p className="text-[#A7A7A7] text-base leading-relaxed max-w-[320px]">
               The only discounting app that stays awake with you.
